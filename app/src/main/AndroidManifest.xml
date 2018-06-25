@@ -43,7 +43,6 @@
 
         <activity android:name=".PetaGelintung" />
         <activity android:name=".GelintungMap" />
-        <activity android:name=".buttonmapgelintung.ButtGel1" />
         <activity android:name=".buttonmapgelintung.ButtGel0" android:theme="@style/AppTheme.CustomTheme">
 
 
