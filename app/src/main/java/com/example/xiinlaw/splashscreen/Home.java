@@ -1,3 +1,5 @@
+//Dasbor
+
 package com.example.xiinlaw.splashscreen;
 
 import android.content.Intent;
@@ -14,7 +16,7 @@ public class Home extends AppCompatActivity {
     }
     public void pindah(View view) {
 
-        Intent intent=new Intent(Home.this,MapsActivity.class);
+        Intent intent=new Intent(Home.this,GelintungMap.class);
         startActivity(intent);
 
     }

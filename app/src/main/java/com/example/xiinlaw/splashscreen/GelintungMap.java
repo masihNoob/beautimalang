@@ -1,3 +1,5 @@
+//Mapping Google Gelintunng
+
 package com.example.xiinlaw.splashscreen;
 
 import android.content.Intent;

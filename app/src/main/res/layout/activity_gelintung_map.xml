@@ -13,5 +13,6 @@
         android:onClick="pindah"
         android:text="Button"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="459dp" />
+        tools:layout_editor_absoluteY="459dp"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

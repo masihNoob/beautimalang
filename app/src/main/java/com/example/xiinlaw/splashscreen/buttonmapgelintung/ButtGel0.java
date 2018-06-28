@@ -1,3 +1,5 @@
+//Tombol Button Pop up Gelintung
+
 package com.example.xiinlaw.splashscreen.buttonmapgelintung;
 
 import android.support.v7.app.AppCompatActivity;
