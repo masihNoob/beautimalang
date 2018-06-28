@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
     }
     public void pindah(View view) {
 
-        Intent intent=new Intent(Home.this,GelintungMap.class);
+        Intent intent=new Intent(this,MapsActivity.class);
         startActivity(intent);
 
     }
