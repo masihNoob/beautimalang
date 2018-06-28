@@ -16,8 +16,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
     buildToolsVersion '27.0.3'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -46,7 +44,7 @@ dependencies {
     //image view
     implementation 'com.gjiazhe:PanoramaImageView:1.0'
 
-
-
+    //action button
+    implementation 'com.android.support:design:27.1.1'
 
 }

@@ -43,7 +43,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".PetaGelintung" />
-        <activity android:name=".GelintungMap" />
         <activity android:name=".buttonmapgelintung.ButtGel0" android:theme="@style/AppTheme.CustomTheme">
 
 
