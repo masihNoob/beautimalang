@@ -6,6 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo3g"
-    tools:context=".buttonmapgelintung.ButtGel0">
+    tools:context=".PetaGelintung">
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:onClick="cancell"
+        app:srcCompat="@drawable/ic_action_name"
+        tools:layout_editor_absoluteX="319dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
