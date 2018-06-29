@@ -40,6 +40,7 @@ dependencies {
     //mapbox
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
 
     //image view
     implementation 'com.gjiazhe:PanoramaImageView:1.0'
