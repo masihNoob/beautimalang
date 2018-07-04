@@ -89,6 +89,31 @@
             app:cardCornerRadius="8dp"
             >
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="105dp"
+
+                android:text="Kampung 3D"
+                android:textColor="@android:color/black" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="107dp"
+                app:srcCompat="@drawable/unnamed" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:onClick="pindah3"
+                app:srcCompat="@drawable/unnamed" />
+
+
+
         </android.support.v7.widget.CardView>
         <!-- column3 -->
         <android.support.v7.widget.CardView
@@ -101,7 +126,32 @@
             app:layout_rowWeight="1"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            />
+            >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="105dp"
+
+                android:text="Warna-Warni"
+                android:textColor="@android:color/black" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="100dp"
+                android:layout_height="107dp"
+                android:layout_marginLeft="8dp"
+                app:srcCompat="@drawable/warna" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:onClick="pindah4"
+                app:srcCompat="@drawable/unnamed" />
+
+        </android.support.v7.widget.CardView>
 
         <!-- column4 -->
         <android.support.v7.widget.CardView

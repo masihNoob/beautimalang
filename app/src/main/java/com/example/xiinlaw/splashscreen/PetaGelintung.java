@@ -26,26 +26,15 @@ private GyroscopeObserver gyroscopeObserver;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peta_gelintung);
     }
-    public void pindah(View view) {
-        setContentView(R.layout.activity_buttgel0);
-        DisplayMetrics dm =new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width=dm.widthPixels;
-        int height=dm.heightPixels;
-        getWindow().setLayout((int)(width*.8),(int)(height*.6));
-    }
+
 
 
    public void pindah2(View view) {
 
 
 
-            setContentView(R.layout.activity_buttgel1);
-            DisplayMetrics dm = new DisplayMetrics();
-            getWindowManager().getDefaultDisplay().getMetrics(dm);
-            int width = dm.widthPixels;
-            int height = dm.heightPixels;
-            getWindow().setLayout((int) (width * .8), (int) (height * .6));
+       Intent intent=new Intent(this,Slider.class);
+       startActivity(intent);
 
     }
     public void cancell (View view)
@@ -54,6 +43,13 @@ private GyroscopeObserver gyroscopeObserver;
         startActivity(intent);
 
     }
+    public void kembali(View view)
+    {
+        Intent intent=new Intent(this,Home.class);
+        startActivity(intent);
+
+    }
+
 
 
 

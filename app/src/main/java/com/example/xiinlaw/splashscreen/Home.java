@@ -20,5 +20,17 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void pindah3(View view) {
 
+        Intent intent=new Intent(this,Slader3d.class);
+        startActivity(intent);
+
+    }
+
+    public void pindah4(View view) {
+
+        Intent intent=new Intent(this,PetaKampungWarnaWarni.class);
+        startActivity(intent);
+
+    }
 }
