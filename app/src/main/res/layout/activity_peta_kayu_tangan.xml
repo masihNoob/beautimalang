@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetaGelintung">
-
+    tools:context=".PetaKayuTangan">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -13,7 +12,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
 
-        >
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="354dp"
+        tools:ignore="MissingConstraints">
 
 
         <RelativeLayout
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/petagel"
+            android:background="@drawable/kayupeta"
             android:orientation="vertical">
 
             <Button
@@ -30,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="185dp"
+                android:layout_marginStart="171dp"
                 android:onClick="pindah2"
                 android:text="View Spot Image" />
 
@@ -53,15 +54,4 @@
     </HorizontalScrollView>
 
 
-</RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
+</android.support.constraint.ConstraintLayout>
