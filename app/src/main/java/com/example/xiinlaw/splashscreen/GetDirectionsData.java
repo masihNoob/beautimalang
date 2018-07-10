@@ -26,7 +26,6 @@ public class GetDirectionsData extends AsyncTask<Object,String,String> {
     GoogleMap mMap;
     String url;
     String googleDirectionsData;
-    String duration, distance;
     LatLng latLng;
     @Override
     protected String doInBackground(Object... objects) {
@@ -52,6 +51,7 @@ public class GetDirectionsData extends AsyncTask<Object,String,String> {
         String[] directionsList;
         DataParser parser = new DataParser();
         directionsList = parser.parseDirections(s);
+        Log.d("parsedirection", "onPostExecute: "+directionsList);
         displayDirection(directionsList);
 
     }
