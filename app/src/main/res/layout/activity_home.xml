@@ -174,13 +174,14 @@
 
                 android:text="Kajoe Tangan"
                 android:textColor="@android:color/black" />
+
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="100dp"
-                android:layout_height="107dp"
+                android:layout_height="94dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="11dp"
-                app:srcCompat="@drawable/iconkayu" />
+                app:srcCompat="@drawable/kayu" />
 
             <ImageButton
                 android:id="@+id/imageButton4"

@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".PetaKampungWarnaWarni">
 
 
-<HorizontalScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true"
-
-    >
-
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/petawarna"
-        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button0"
+        >
+
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-
-            android:layout_marginStart="158dp"
-            android:onClick="buton1"
-            android:text="View Spot Image" />
-
-
-        <Button
-            android:id="@+id/Back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="36dp"
-            android:onClick="kembali"
-            android:text="Back" />
+            android:layout_alignParentTop="true"
+            android:background="@drawable/petawarna"
+            android:orientation="vertical">
 
 
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="122dp"
+                android:layout_height="87dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="170dp"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:onClick="kembali"
+                android:scaleType="fitCenter"
 
-    </RelativeLayout>
+                app:srcCompat="@drawable/backbutton" />
 
 
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="156dp"
+                android:layout_height="106dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="400dp"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:onClick="buton1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/spotview" />
 
-</HorizontalScrollView>
+
+        </RelativeLayout>
+
+
+    </HorizontalScrollView>
 
 
 </RelativeLayout>
