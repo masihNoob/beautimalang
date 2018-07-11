@@ -14,7 +14,7 @@ public class ViewPageAdapter extends PagerAdapter {
     //slider gelintung
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.g1,R.drawable.g2,R.drawable.g3,R.drawable.g4,R.drawable.g5};
+    private Integer [] images = {R.drawable.g1,R.drawable.g2,R.drawable.g3,R.drawable.g4,R.drawable.g5,R.drawable.g6};
 
     public ViewPageAdapter(Context context) {
         this.context = context;
