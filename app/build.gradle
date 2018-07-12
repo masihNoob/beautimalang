@@ -49,4 +49,10 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.synnapps:carouselview:0.1.4'
 
+    //direction
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
 }
