@@ -45,7 +45,9 @@
         <activity android:name=".Slider" />
         <activity android:name=".Slader3d" />
         <activity android:name=".PetaKampungWarnaWarni" />
-        <activity android:name=".SladerWarna"></activity>
+        <activity android:name=".SladerWarna" />
+        <activity android:name=".PetaKayuTangan" />
+        <activity android:name=".Sladerkajoe"></activity>
     </application>
 
 </manifest>

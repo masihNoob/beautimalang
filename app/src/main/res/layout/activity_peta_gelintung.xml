@@ -24,34 +24,33 @@
             android:background="@drawable/petagel"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="92dp"
-                android:onClick="pindah2"
-                android:text="View Spot Image" />
 
-
-            <Button
-                android:id="@+id/Back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="112dp"
+                android:layout_height="66dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="34dp"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
                 android:onClick="kembali"
-                android:text="Back" />
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/backbutton" />
 
-
-
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="156dp"
+                android:layout_height="106dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="400dp"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:onClick="pindah2"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/spotview" />
         </RelativeLayout>
-
-
 
     </HorizontalScrollView>
 

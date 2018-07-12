@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
     }
     public void pindah(View view) {
 
-        Intent intent=new Intent(this,MapsActivity.class);
+        Intent intent=new Intent(this,PetaGelintung.class);
         startActivity(intent);
 
     }
@@ -30,6 +30,12 @@ public class Home extends AppCompatActivity {
     public void pindah4(View view) {
 
         Intent intent=new Intent(this,PetaKampungWarnaWarni.class);
+        startActivity(intent);
+
+    }
+    public void pindah5(View view) {
+
+        Intent intent=new Intent(this,PetaKayuTangan.class);
         startActivity(intent);
 
     }
