@@ -13,7 +13,7 @@ public class ViewPageAdapterKajoe  extends PagerAdapter {//ubah
     //slider 3d
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.k1,R.drawable.k3,R.drawable.k8,R.drawable.k5,R.drawable.k6};
+    private Integer [] images = {R.drawable.k1,R.drawable.k2,R.drawable.k3,R.drawable.k4,R.drawable.k8,R.drawable.k5,R.drawable.k6,R.drawable.k7};
 
     public ViewPageAdapterKajoe(Context context) {
         this.context = context;
