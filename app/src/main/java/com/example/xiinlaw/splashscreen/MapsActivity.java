@@ -2,6 +2,7 @@ package com.example.xiinlaw.splashscreen;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -13,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import com.example.xiinlaw.splashscreen.Model.IGoogleAPIService;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -301,5 +303,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             polyline = mMap.addPolyline(polylineOptions);
             waitDialog.dismiss();
         }
+    }
+
+    //button infolokasi
+    public void infoLokasi(View view) {
+        Intent intent=new Intent(this,PetaGelintung.class);
+        startActivity(intent);
     }
 }
