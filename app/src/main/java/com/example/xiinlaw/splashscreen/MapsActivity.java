@@ -304,10 +304,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             waitDialog.dismiss();
         }
     }
-
     //button infolokasi
     public void infoLokasi(View view) {
-        Intent intent=new Intent(this,PetaGelintung.class);
-        startActivity(intent);
+        Intent intent;
+        switch (Common.getPlaceName()){
+            case "Go Green Glintung":{
+                intent = new Intent(this,PetaGelintung.class);
+                startActivity(intent);
+            }
+            break;
+            case "Kampung Tridi":{
+                intent=new Intent(this,Slader3d.class);
+                startActivity(intent);
+            }
+            break;
+            case "kajoetangan heritage":{
+                intent=new Intent(this,PetaKayuTangan.class);
+                startActivity(intent);
+            }
+            break;
+            case "warna warni jodipan":{
+                intent=new Intent(this,PetaKampungWarnaWarni.class);
+                startActivity(intent);
+            }
+            break;
+        }
     }
 }

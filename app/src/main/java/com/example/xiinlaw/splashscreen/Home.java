@@ -14,31 +14,6 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
     }
-    public void pindah(View view) {
-
-        Intent intent=new Intent(this,PetaGelintung.class);
-        startActivity(intent);
-
-    }
-    public void pindah3(View view) {
-
-        Intent intent=new Intent(this,Slader3d.class);
-        startActivity(intent);
-
-    }
-
-    public void pindah4(View view) {
-
-        Intent intent=new Intent(this,PetaKampungWarnaWarni.class);
-        startActivity(intent);
-
-    }
-    public void pindah5(View view) {
-
-        Intent intent=new Intent(this,PetaKayuTangan.class);
-        startActivity(intent);
-
-    }
     public void NextMethod(View view) {
         switch (view.getId()){
             case R.id.buttonGelintung:{
