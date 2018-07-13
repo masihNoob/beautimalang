@@ -26,32 +26,22 @@
 
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="112dp"
-                android:layout_height="66dp"
+                android:id="@+id/imageButton2"
+                android:layout_width="106dp"
+                android:layout_height="74dp"
+
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="34dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginStart="35dp"
                 android:adjustViewBounds="true"
-                android:background="#00000000"
-                android:onClick="kembali"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/backbutton" />
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="156dp"
-                android:layout_height="106dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="60dp"
-                android:adjustViewBounds="true"
-                android:background="#00000000"
                 android:onClick="pindah2"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/spotview" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/gallery" />
+
+
         </RelativeLayout>
+
 
     </HorizontalScrollView>
 

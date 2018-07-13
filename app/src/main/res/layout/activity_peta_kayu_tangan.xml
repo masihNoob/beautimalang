@@ -13,46 +13,32 @@
         android:layout_alignParentTop="true"
 
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="0dp">
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/kayupeta"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="122dp"
-                android:layout_height="87dp"
+                android:id="@+id/imageButton2"
+                android:layout_width="98dp"
+                android:layout_height="79dp"
+
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="55dp"
-                android:layout_marginStart="12dp"
+
+                android:layout_marginBottom="11dp"
+                android:layout_marginStart="26dp"
                 android:adjustViewBounds="true"
-                android:background="#00000000"
-
-                android:onClick="kembali"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/backbutton" />
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="144dp"
-                android:layout_height="72dp"
-
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="19dp"
-                android:adjustViewBounds="true"
-                android:background="#00000000"
                 android:onClick="pindah2"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/spotview" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/gallery" />
 
 
         </RelativeLayout>
