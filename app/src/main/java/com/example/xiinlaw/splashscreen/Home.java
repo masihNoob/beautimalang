@@ -2,17 +2,24 @@
 
 package com.example.xiinlaw.splashscreen;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 public class Home extends AppCompatActivity {
+    private static final int MY_PERMISSION_CODE = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) checkLocationPermission();
     }
     public void NextMethod(View view) {
         switch (view.getId()){
@@ -41,5 +48,21 @@ public class Home extends AppCompatActivity {
             break;
         }
         startActivity(new Intent(this, MapsActivity.class));
+    }
+    private boolean checkLocationPermission() {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION))
+                ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                }, MY_PERMISSION_CODE);
+            else
+                ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                }, MY_PERMISSION_CODE);
+            return false;
+        }
+        else
+            return true;
     }
 }
