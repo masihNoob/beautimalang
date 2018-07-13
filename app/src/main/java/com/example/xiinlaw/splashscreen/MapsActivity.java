@@ -147,7 +147,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                lastlocation = locationResult.getLastLocation();
+                /*lastlocation = locationResult.getLastLocation();
 
                 MarkerOptions markerOptions = new MarkerOptions()
                         .position(new LatLng(lastlocation.getLatitude(), lastlocation.getLongitude()))
@@ -166,7 +166,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .title(Common.getPlaceName())
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
-                drawPath(lastlocation, Common.getLatGreen()+","+Common.getLngGreen());
+                drawPath(lastlocation, Common.getLatGreen()+","+Common.getLngGreen());*/
             }
         };
     }
@@ -180,7 +180,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+        //mMap.getUiSettings().setZoomControlsEnabled(true);
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
