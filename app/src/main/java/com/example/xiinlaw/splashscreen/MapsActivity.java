@@ -14,8 +14,10 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 
+import com.example.xiinlaw.splashscreen.GPSLok.GPSLocation;
 import com.example.xiinlaw.splashscreen.Model.IGoogleAPIService;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -46,7 +48,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GPSLocation.LocationCallback {
 
     private GoogleMap mMap;
 
@@ -58,6 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     Polyline polyline;
     IGoogleAPIService iGoogleAPIService;
+    private GPSLocation mGPSLocation;
 
     //variable
     private static final int MY_PERMISSION_CODE = 1000;
@@ -75,18 +78,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         iGoogleAPIService = Common.getGoogleAPIServiceScalars();
 
         //request permission
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) checkLocationPermission();
+        //if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) checkLocationPermission();
 
         buildLocationCallBack();
-        buildLocationRequest();
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
-    }
 
+        mGPSLocation = new GPSLocation(this, this);
+        mGPSLocation.init();
+    }
+/*
     private boolean checkLocationPermission() {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
@@ -122,7 +127,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             break;
         }
-    }
+    }*/
 
     /**
      * Manipulates the map once available.
@@ -147,7 +152,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                /*lastlocation = locationResult.getLastLocation();
+                lastlocation = locationResult.getLastLocation();
 
                 MarkerOptions markerOptions = new MarkerOptions()
                         .position(new LatLng(lastlocation.getLatitude(), lastlocation.getLongitude()))
@@ -166,15 +171,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .title(Common.getPlaceName())
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
-                drawPath(lastlocation, Common.getLatGreen()+","+Common.getLngGreen());*/
+                drawPath(lastlocation, Common.getLatGreen()+","+Common.getLngGreen());
             }
         };
-    }
-
-    @Override
-    protected void onStop() {
-        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
-        super.onStop();
     }
 
     @Override
@@ -329,6 +328,88 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 startActivity(intent);
             }
             break;
+        }
+    }
+
+    //GPS location callback
+    @Override
+    public void onLastKnowLocationFetch(Location location) {
+        if(location != null) {
+            Log.d("ali ", "onLastKnowLocationFetch " + location);
+            buildLocationCallBack();
+        }
+    }
+
+    @Override
+    public void onLocationUpdate(Location location) {
+        if(location != null) {
+            Log.d("ali ", "onLocationUpdate " + location);
+            buildLocationCallBack();
+        }
+    }
+
+    @Override
+    public void onLocationPermissionDenied() {
+
+    }
+
+    @Override
+    public void onLocationSettingsError() {
+
+    }
+
+    @Override
+    protected void onStart() {
+        mGPSLocation.connect();
+        super.onStart();
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mGPSLocation.startLocationUpdates();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mGPSLocation.stopLocationUpdates();
+    }
+
+
+    @Override
+    protected void onStop() {
+        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+        mGPSLocation.disconnect();
+        super.onStop();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        mGPSLocation.close();
+        super.onDestroy();
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == GPSLocation.LOCATION_PERMISSION_REQUEST_CODE) {
+            mGPSLocation.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            buildLocationCallBack();
+        }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GPSLocation.REQUEST_CHECK_SETTINGS) {
+            mGPSLocation.onActivityResult(requestCode, resultCode, data);
+            buildLocationCallBack();
         }
     }
 }

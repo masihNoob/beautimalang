@@ -25,8 +25,8 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="25dp"
             app:backgroundTint="@color/Blue"
-            app:fabSize="normal"
-            android:src="@drawable/ic_action_info"
+            app:fabSize="mini"
+            android:src="@drawable/if_crossroads_1055077"
             android:onClick="infoLokasi"
             />
     </android.support.design.widget.CoordinatorLayout>

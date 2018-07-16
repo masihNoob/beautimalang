@@ -5,6 +5,7 @@ package com.example.xiinlaw.splashscreen;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -12,14 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Home extends AppCompatActivity {
+import com.example.xiinlaw.splashscreen.GPSLok.GPSLocation;
+
+public class Home extends AppCompatActivity implements GPSLocation.LocationCallback{
     private static final int MY_PERMISSION_CODE = 1000;
+    private GPSLocation mGPSLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) checkLocationPermission();
+        mGPSLocation = new GPSLocation(this, this);
+        mGPSLocation.init();
+
     }
     public void NextMethod(View view) {
         switch (view.getId()){
@@ -49,20 +55,75 @@ public class Home extends AppCompatActivity {
         }
         startActivity(new Intent(this, MapsActivity.class));
     }
-    private boolean checkLocationPermission() {
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        {
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION))
-                ActivityCompat.requestPermissions(this, new String[]{
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                }, MY_PERMISSION_CODE);
-            else
-                ActivityCompat.requestPermissions(this, new String[]{
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                }, MY_PERMISSION_CODE);
-            return false;
+    @Override
+    public void onLastKnowLocationFetch(Location location) {
+
+    }
+
+    @Override
+    public void onLocationUpdate(Location location) {
+
+    }
+
+    @Override
+    public void onLocationPermissionDenied() {
+
+    }
+
+    @Override
+    public void onLocationSettingsError() {
+
+    }
+
+    @Override
+    protected void onStart() {
+        mGPSLocation.connect();
+        super.onStart();
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mGPSLocation.startLocationUpdates();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mGPSLocation.stopLocationUpdates();
+    }
+
+
+    @Override
+    protected void onStop() {
+        mGPSLocation.disconnect();
+        super.onStop();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        mGPSLocation.close();
+        super.onDestroy();
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == GPSLocation.LOCATION_PERMISSION_REQUEST_CODE) {
+            mGPSLocation.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        else
-            return true;
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GPSLocation.REQUEST_CHECK_SETTINGS) {
+            mGPSLocation.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
