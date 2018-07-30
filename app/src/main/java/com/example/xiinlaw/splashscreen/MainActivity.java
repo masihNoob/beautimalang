@@ -13,7 +13,7 @@ import android.os.Bundle;
 
 
 public class MainActivity extends AppCompatActivity {
-    private int waktu_loading=2000;
+    private int waktu_loading=1000;
 
     //4000=4 detik
 
