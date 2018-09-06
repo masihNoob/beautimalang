@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".petatridi"
+    android:background="@drawable/bgg"
+    >
+
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:orientation="vertical">
+
+
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/photo_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            />
+
+
+
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="98dp"
+            android:layout_height="79dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="26dp"
+            android:adjustViewBounds="true"
+            android:onClick="pindah2"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/gallery" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

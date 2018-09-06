@@ -14,7 +14,7 @@ public class ViewPageAdapter extends PagerAdapter {
     //slider gelintung
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.g1,R.drawable.g2,R.drawable.g3,R.drawable.g4,R.drawable.g5,R.drawable.g6};
+    private Integer [] images = {R.drawable.g0,R.drawable.g1,R.drawable.g2,R.drawable.g3,R.drawable.g4,R.drawable.g5,R.drawable.g6,R.drawable.g7,R.drawable.g8};
 
     public ViewPageAdapter(Context context) {
         this.context = context;
@@ -35,7 +35,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+        ImageView imageView = view.findViewById(R.id.imageView);
         imageView.setImageResource(images[position]);
 
         ViewPager vp = (ViewPager) container;
