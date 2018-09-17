@@ -11,19 +11,25 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.xiinlaw.splashscreen.GPSLok.GPSLocation;
 
 public class Home extends AppCompatActivity implements GPSLocation.LocationCallback{
     private static final int MY_PERMISSION_CODE = 1000;
     private GPSLocation mGPSLocation;
+    private TextView tv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mGPSLocation = new GPSLocation(this, this);
+        tv=(TextView)this.findViewById(R.id.textView6);
+        tv.setSelected(true);
         mGPSLocation.init();
 
     }
