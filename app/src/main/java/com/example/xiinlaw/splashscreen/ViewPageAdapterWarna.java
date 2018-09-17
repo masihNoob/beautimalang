@@ -14,7 +14,7 @@ public class ViewPageAdapterWarna extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    private Integer [] images = {R.drawable.w1,R.drawable.w2,R.drawable.w6,R.drawable.w3,R.drawable.w15,R.drawable.w12,R.drawable.w8,R.drawable.w9,R.drawable.w5,R.drawable.w4,R.drawable.w18,R.drawable.w7,R.drawable.w10,R.drawable.w11,R.drawable.w13,R.drawable.w14,R.drawable.w17,R.drawable.w19};
+    private Integer [] images = {R.drawable.w0,R.drawable.w1,R.drawable.w2,R.drawable.w3,R.drawable.w4,R.drawable.w5,R.drawable.w6,R.drawable.w7,R.drawable.w8,R.drawable.w9,R.drawable.w10,R.drawable.w11,R.drawable.w12,R.drawable.w13,R.drawable.w14};
     public ViewPageAdapterWarna(Context context) {
         this.context = context;
     }

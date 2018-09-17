@@ -314,7 +314,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             break;
             case "Kampung Tridi":{
-                intent=new Intent(this,Slader3d.class);
+                intent=new Intent(this,petatridi.class);
                 startActivity(intent);
             }
             break;

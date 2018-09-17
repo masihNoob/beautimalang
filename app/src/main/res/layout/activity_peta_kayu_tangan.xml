@@ -4,17 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetaKayuTangan">
+    tools:context=".PetaKayuTangan"
+    android:background="@drawable/bgg"
+    >
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
 
 
         <RelativeLayout
@@ -22,8 +16,22 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/kayupeta"
+
             android:orientation="vertical">
+
+
+
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/photo_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+
+                 />
+
+
+
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -44,7 +52,7 @@
         </RelativeLayout>
 
 
-    </HorizontalScrollView>
+
 
 
 </android.support.constraint.ConstraintLayout>

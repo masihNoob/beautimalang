@@ -51,7 +51,8 @@
         <activity android:name=".PetaKampungWarnaWarni" />
         <activity android:name=".SladerWarna" />
         <activity android:name=".PetaKayuTangan" />
-        <activity android:name=".Sladerkajoe"></activity>
+        <activity android:name=".Sladerkajoe" />
+        <activity android:name=".petatridi"></activity>
     </application>
 
 </manifest>

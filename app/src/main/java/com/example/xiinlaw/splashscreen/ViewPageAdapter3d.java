@@ -13,7 +13,7 @@ public class ViewPageAdapter3d  extends PagerAdapter {
     //slider 3d
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.d1,R.drawable.d2,R.drawable.d3,R.drawable.d4,R.drawable.d5,R.drawable.d6,R.drawable.d7,R.drawable.d8,R.drawable.d9,R.drawable.d10,R.drawable.d11};
+    private Integer [] images = {R.drawable.d1,R.drawable.d2,R.drawable.d3,R.drawable.d4,R.drawable.d5,R.drawable.d6,R.drawable.d7,R.drawable.d8,R.drawable.d9,R.drawable.d10,R.drawable.d11,R.drawable.d12,R.drawable.d13,R.drawable.d15,R.drawable.d16,R.drawable.d17,R.drawable.d18,R.drawable.dd,R.drawable.d20,R.drawable.d21};
 
     public ViewPageAdapter3d(Context context) {
         this.context = context;
