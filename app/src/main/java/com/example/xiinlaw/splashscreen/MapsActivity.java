@@ -173,6 +173,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 drawPath(lastlocation, Common.getLatGreen()+","+Common.getLngGreen());
             }
+
         };
     }
 

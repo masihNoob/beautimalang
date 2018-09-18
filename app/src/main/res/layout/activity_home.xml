@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:background="@drawable/bgg"
     android:weightSum="10"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:id="@+id/relative"
+    >
 
 
     <TextView
@@ -208,20 +210,29 @@
     </android.support.v7.widget.GridLayout>
 
     <TextView
-        android:id="@+id/runningText"
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:textColor="@color/White"
+        android:singleLine="true"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="the author is shobirin"
-        android:textAlignment="textStart"
-        android:textColor="@color/White"
-        android:textStyle="bold" />
+
+        android:text="Dinas Kebudayaan Kota Malang | Alamat :  MUSEUM MPU PURWA Jl. Sukarno Hatta B. 210 MALANG | Telp 0341-404515" />
+
+    <Button
+        android:id="@+id/buttonig"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/bgra"
+        android:text="ABOUT"
+        android:textColor="@color/Grey"
+        android:textStyle="italic" />
 
 
 </RelativeLayout>
