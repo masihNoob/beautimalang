@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:background="@drawable/bgg"
     android:weightSum="10"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:id="@+id/relative"
+    >
 
 
     <TextView
@@ -214,12 +216,23 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:textColor="@color/White"
-        android:ellipsize="marquee"
         android:singleLine="true"
-        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
 
-        android:text="Halo My Name is Alam" />
+        android:text="Dinas Kebudayaan Kota Malang | Alamat :  MUSEUM MPU PURWA Jl. Sukarno Hatta B. 210 MALANG | Telp 0341-404515" />
+
+    <Button
+        android:id="@+id/buttonig"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/bgra"
+        android:text="ABOUT"
+        android:textColor="@color/Grey"
+        android:textStyle="italic" />
 
 
 </RelativeLayout>
