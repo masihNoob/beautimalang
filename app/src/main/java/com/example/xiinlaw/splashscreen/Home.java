@@ -3,34 +3,99 @@
 package com.example.xiinlaw.splashscreen;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.example.xiinlaw.splashscreen.GPSLok.GPSLocation;
+
 
 public class Home extends AppCompatActivity implements GPSLocation.LocationCallback{
     private static final int MY_PERMISSION_CODE = 1000;
     private GPSLocation mGPSLocation;
     private TextView tv;
+    private Button test;
+    private PopupWindow popupWindow;
+    private LayoutInflater layoutInflater;
 
 
+    private RelativeLayout relativeLayout;
+
+
+
+    @SuppressLint({"ServiceCast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mGPSLocation = new GPSLocation(this, this);
+        //Running Text
         tv=(TextView)this.findViewById(R.id.textView6);
         tv.setSelected(true);
         mGPSLocation.init();
+
+        //button author
+        test =(Button) findViewById(R.id.buttonig);
+        relativeLayout=(RelativeLayout)findViewById(R.id.relative);
+
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                layoutInflater=(LayoutInflater)getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                ViewGroup container=(ViewGroup)layoutInflater.inflate(R.layout.activity_popup,null);
+
+                // Intent popup=new Intent(Home.this, Popup.class);
+                //startActivity(popup);
+                popupWindow=new PopupWindow(container,600,800,true);
+                popupWindow.showAtLocation(relativeLayout, Gravity.NO_GRAVITY,50,300);
+
+
+                container.setOnTouchListener(new View.OnTouchListener() {
+                                                 @Override
+                                                 public boolean onTouch(View v, MotionEvent event) {
+                                                     popupWindow.dismiss();
+                                                     //Intent popup=new Intent(Popup.this, Home.class);
+                                                     //startActivity(popup);
+                                                     return false;
+                                                 }
+                                             }
+                );
+            }
+        });
+
+
+
+
+
+
+    }
+    public void pindah2(View view) {
+
+
+
+        Intent intent=new Intent(this,Popup.class);
+        startActivity(intent);
 
     }
     public void NextMethod(View view) {

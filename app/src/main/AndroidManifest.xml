@@ -52,7 +52,8 @@
         <activity android:name=".SladerWarna" />
         <activity android:name=".PetaKayuTangan" />
         <activity android:name=".Sladerkajoe" />
-        <activity android:name=".petatridi"></activity>
+        <activity android:name=".petatridi" />
+        <activity android:name=".Popup"></activity>
     </application>
 
 </manifest>
