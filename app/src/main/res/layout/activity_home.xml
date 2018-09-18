@@ -208,18 +208,20 @@
     </android.support.v7.widget.GridLayout>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/runningText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:textColor="@color/White"
+        android:layout_alignParentRight="true"
         android:ellipsize="marquee"
-        android:singleLine="true"
-        android:scrollHorizontally="true"
         android:marqueeRepeatLimit="marquee_forever"
-
-        android:text="Halo My Name is Alam" />
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="the author is shobirin"
+        android:textAlignment="textStart"
+        android:textColor="@color/White"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

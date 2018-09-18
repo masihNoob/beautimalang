@@ -28,8 +28,10 @@ public class Home extends AppCompatActivity implements GPSLocation.LocationCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mGPSLocation = new GPSLocation(this, this);
-        tv=(TextView)this.findViewById(R.id.textView6);
+
+        tv= findViewById(R.id.runningText);
         tv.setSelected(true);
+
         mGPSLocation.init();
 
     }
