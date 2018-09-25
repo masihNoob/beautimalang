@@ -6,5 +6,5 @@ import retrofit2.http.Query;
 
 public interface IGoogleAPIService {
     @GET("maps/api/directions/json")
-    Call<String> getDirections(@Query("origin") String origin, @Query("destination") String destination);
+    Call<String> getDirections(@Query("origin") String origin, @Query("destination") String destination, @Query("key") String api_key);
 }

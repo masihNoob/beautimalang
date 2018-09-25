@@ -1,5 +1,7 @@
 package com.example.xiinlaw.splashscreen;
 
+import android.util.Log;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -19,6 +21,8 @@ class DirectionJSONParser {
         JSONArray jLegs = null;
         JSONArray jSteps = null;
 
+        JSONObject jDistance = null;
+        JSONObject jDuration = null;
         try {
 
             jRoutes = jObject.getJSONArray("routes");
@@ -30,6 +34,23 @@ class DirectionJSONParser {
 
                 /** Traversing all legs */
                 for(int j=0;j<jLegs.length();j++){
+
+                    /** Getting distance from the json data */
+                    jDistance = ((JSONObject) jLegs.get(j)).getJSONObject("distance");
+                    HashMap<String, String> hmDistance = new HashMap<String, String>();
+                    hmDistance.put("distance", jDistance.get("text").toString());
+
+                    /** Getting duration from the json data */
+                    jDuration = ((JSONObject) jLegs.get(j)).getJSONObject("duration");
+                    HashMap<String, String> hmDuration = new HashMap<String, String>();
+                    hmDuration.put("duration", jDuration.get("text").toString());
+
+                    /** Adding distance object to the path */
+                    path.add(hmDistance);
+
+                    /** Adding duration object to the path */
+                    path.add(hmDuration);
+
                     jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
 
                     /** Traversing all steps */

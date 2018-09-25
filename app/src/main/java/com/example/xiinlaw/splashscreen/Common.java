@@ -31,9 +31,27 @@ public class Common {
         Common.placeName = placeName;
     }
 
+    public static String getDistance() {
+        return distance;
+    }
+
+    public static void setDistance(String distance) {
+        Common.distance = distance;
+    }
+
+    public static String getDuration() {
+        return duration;
+    }
+
+    public static void setDuration(String duration) {
+        Common.duration = duration;
+    }
+
     private static String latGreen = "";
     private static String lngGreen = "";
     private static String placeName = "";
+    private static String distance = "";
+    private static String duration = "";
 
     public static IGoogleAPIService getGoogleAPIService()
     {
