@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        beautifulmalang {
+            keyAlias 'beautiMlng'
+            keyPassword 'malamku123'
+            storeFile file('C:/Users/ghuni afia/Documents/beautiMlng.jks')
+            storePassword 'malamku123'
+        }
+    }
     compileSdkVersion 27
     project.archivesBaseName = "AppName";
-
     defaultConfig {
         applicationId 'com.example.xiinlaw.beautifulmalang'
         minSdkVersion 21
@@ -18,9 +25,13 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.beautifulmalang
+        }
+        debug {
+            signingConfig signingConfigs.beautifulmalang
         }
     }
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.2'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
