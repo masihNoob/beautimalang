@@ -53,7 +53,8 @@
         <activity android:name=".PetaKayuTangan" />
         <activity android:name=".Sladerkajoe" />
         <activity android:name=".petatridi" />
-        <activity android:name=".Popup"></activity>
+        <activity android:name=".Popup" />
+        <activity android:name=".MapsActivity" />
     </application>
 
 </manifest>

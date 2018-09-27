@@ -5,7 +5,7 @@ android {
         beautifulmalang {
             keyAlias 'beautiMlng'
             keyPassword 'malamku123'
-            storeFile file('C:/Users/ghuni afia/Documents/beautiMlng.jks')
+            storeFile file('C:/Users/Xiin Law/Documents/beautiMlng.jks')
             storePassword 'malamku123'
         }
     }
@@ -24,11 +24,14 @@ android {
         release {
             shrinkResources true
             minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.beautifulmalang
         }
         debug {
             signingConfig signingConfigs.beautifulmalang
+            minifyEnabled true
+            useProguard true
         }
     }
     buildToolsVersion '28.0.2'

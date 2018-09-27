@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Kampung Malang</string>
     <string name="title_activity_gelintung_map">Map</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
