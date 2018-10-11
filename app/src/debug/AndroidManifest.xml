@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.xiinlaw.splashscreen">
+    package="com.disbudpar.xiinlaw.splashscreen">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -22,7 +22,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.xiinlaw.splashscreen.MapsActivity"
+            android:name="com.disbudpar.xiinlaw.splashscreen.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
     </application>
 

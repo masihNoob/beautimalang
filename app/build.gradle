@@ -3,22 +3,25 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         beautifulmalang {
-            keyAlias 'beautiMlng'
-            keyPassword 'malamku123'
-            storeFile file('C:/Users/Xiin Law/Documents/beautiMlng.jks')
-            storePassword 'malamku123'
+            keyAlias 'kampungmalang'
+            keyPassword 'malangku123'
+            storeFile file('../KampungMalang.jks')
+            storePassword 'malangku123'
         }
     }
     compileSdkVersion 27
     project.archivesBaseName = "AppName";
     defaultConfig {
-        applicationId 'com.example.xiinlaw.beautifulmalang'
+        applicationId 'com.disbudpar.xiinlaw.beautifulmalang'
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        setProperty("archivesBaseName", "Kampung Malang-$versionName")
     }
     buildTypes {
         release {
